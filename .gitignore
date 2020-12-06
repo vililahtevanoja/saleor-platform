@@ -2,4 +2,5 @@
 **/.vscode/
 **/.bsp/
 **/.bloop/
+**/metals.sbt
 load-test/**/target/
