@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on darwin)" generated="20201210 20:12:44.860" rpa="false">
+<suite id="s1" name="Find Products" source="/Users/nousiri/Projects/New/saleor-platform/tests/find_products.robot">
+<test id="s1-t1" name="Find Audiobook Product With Full Name">
+<kw name="Open Browser To Front Page" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20201210 20:12:45.215" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20201210 20:12:45.215" endtime="20201210 20:12:49.157"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:12:45.214" endtime="20201210 20:12:49.158"></status>
+</kw>
+<kw name="Template Find Product">
+<arguments>
+<arg>LAKE TUNES</arg>
+</arguments>
+<kw name="Search product">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:12:49.162" endtime="20201210 20:12:49.229"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<msg timestamp="20201210 20:12:49.230" level="INFO">Clicking element '//*[@data-test="menuSearchOverlayLink"]'.</msg>
+<status status="PASS" starttime="20201210 20:12:49.229" endtime="20201210 20:12:49.679"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>timeout=2 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:12:49.679" endtime="20201210 20:12:49.707"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>${product_name}</arg>
+</arguments>
+<msg timestamp="20201210 20:12:49.708" level="INFO">Typing text 'LAKE TUNES' into text field '//input[@placeholder="search"]'.</msg>
+<status status="PASS" starttime="20201210 20:12:49.707" endtime="20201210 20:12:49.899"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2 seconds</arg>
+<arg>Wait for search to finnish</arg>
+</arguments>
+<msg timestamp="20201210 20:12:51.900" level="INFO">Slept 2 seconds</msg>
+<msg timestamp="20201210 20:12:51.900" level="INFO">Wait for search to finnish</msg>
+<status status="PASS" starttime="20201210 20:12:49.899" endtime="20201210 20:12:51.901"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:12:49.160" endtime="20201210 20:12:51.901"></status>
+</kw>
+<kw name="Verify first search result">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${first_search_result}</arg>
+<arg>timeout=5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:12:51.902" endtime="20201210 20:12:51.923"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${first_search_result}//h4</arg>
+<arg>${product_name}</arg>
+</arguments>
+<msg timestamp="20201210 20:12:51.946" level="INFO">Element '//*[@class="search__products__item"][1]//h4' contains text 'LAKE TUNES'.</msg>
+<status status="PASS" starttime="20201210 20:12:51.923" endtime="20201210 20:12:51.946"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:12:51.901" endtime="20201210 20:12:51.947"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:12:49.159" endtime="20201210 20:12:51.947"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201210 20:12:51.947" endtime="20201210 20:12:52.047"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:12:45.213" endtime="20201210 20:12:52.047" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Find Grocery Product With Full Name">
+<kw name="Open Browser To Front Page" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20201210 20:12:52.053" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20201210 20:12:52.052" endtime="20201210 20:12:55.751"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:12:52.051" endtime="20201210 20:12:55.751"></status>
+</kw>
+<kw name="Template Find Product">
+<arguments>
+<arg>SEAMAN LAGER</arg>
+</arguments>
+<kw name="Search product">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:12:55.754" endtime="20201210 20:12:55.817"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<msg timestamp="20201210 20:12:55.818" level="INFO">Clicking element '//*[@data-test="menuSearchOverlayLink"]'.</msg>
+<status status="PASS" starttime="20201210 20:12:55.818" endtime="20201210 20:12:56.236"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>timeout=2 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:12:56.237" endtime="20201210 20:12:56.288"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>${product_name}</arg>
+</arguments>
+<msg timestamp="20201210 20:12:56.289" level="INFO">Typing text 'SEAMAN LAGER' into text field '//input[@placeholder="search"]'.</msg>
+<status status="PASS" starttime="20201210 20:12:56.289" endtime="20201210 20:12:56.778"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2 seconds</arg>
+<arg>Wait for search to finnish</arg>
+</arguments>
+<msg timestamp="20201210 20:12:58.779" level="INFO">Slept 2 seconds</msg>
+<msg timestamp="20201210 20:12:58.779" level="INFO">Wait for search to finnish</msg>
+<status status="PASS" starttime="20201210 20:12:56.779" endtime="20201210 20:12:58.779"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:12:55.753" endtime="20201210 20:12:58.780"></status>
+</kw>
+<kw name="Verify first search result">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${first_search_result}</arg>
+<arg>timeout=5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:12:58.780" endtime="20201210 20:12:58.800"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${first_search_result}//h4</arg>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201210 20:12:59.728" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201210 20:12:58.822" endtime="20201210 20:12:59.728"></status>
+</kw>
+<msg timestamp="20201210 20:12:59.735" level="FAIL">Element '//*[@class="search__products__item"][1]//h4' should have contained text 'SEAMAN LAGER' but its text was 'SEAMAN BEER'.</msg>
+<status status="FAIL" starttime="20201210 20:12:58.801" endtime="20201210 20:12:59.736"></status>
+</kw>
+<status status="FAIL" starttime="20201210 20:12:58.780" endtime="20201210 20:12:59.736"></status>
+</kw>
+<status status="FAIL" starttime="20201210 20:12:55.752" endtime="20201210 20:12:59.736"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201210 20:12:59.736" endtime="20201210 20:12:59.882"></status>
+</kw>
+<status status="FAIL" starttime="20201210 20:12:52.050" endtime="20201210 20:12:59.882" critical="yes">Element '//*[@class="search__products__item"][1]//h4' should have contained text 'SEAMAN LAGER' but its text was 'SEAMAN BEER'.</status>
+</test>
+<test id="s1-t3" name="Find Apparel Product With Full Name">
+<kw name="Open Browser To Front Page" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20201210 20:12:59.887" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20201210 20:12:59.887" endtime="20201210 20:13:03.726"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:12:59.886" endtime="20201210 20:13:03.727"></status>
+</kw>
+<kw name="Template Find Product">
+<arguments>
+<arg>POLO SHIRT</arg>
+</arguments>
+<kw name="Search product">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:13:03.730" endtime="20201210 20:13:03.800"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<msg timestamp="20201210 20:13:03.800" level="INFO">Clicking element '//*[@data-test="menuSearchOverlayLink"]'.</msg>
+<status status="PASS" starttime="20201210 20:13:03.800" endtime="20201210 20:13:03.950"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>timeout=2 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:13:03.950" endtime="20201210 20:13:04.271"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>${product_name}</arg>
+</arguments>
+<msg timestamp="20201210 20:13:04.272" level="INFO">Typing text 'POLO SHIRT' into text field '//input[@placeholder="search"]'.</msg>
+<status status="PASS" starttime="20201210 20:13:04.271" endtime="20201210 20:13:04.450"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2 seconds</arg>
+<arg>Wait for search to finnish</arg>
+</arguments>
+<msg timestamp="20201210 20:13:06.451" level="INFO">Slept 2 seconds</msg>
+<msg timestamp="20201210 20:13:06.451" level="INFO">Wait for search to finnish</msg>
+<status status="PASS" starttime="20201210 20:13:04.450" endtime="20201210 20:13:06.451"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:03.729" endtime="20201210 20:13:06.451"></status>
+</kw>
+<kw name="Verify first search result">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${first_search_result}</arg>
+<arg>timeout=5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:13:06.452" endtime="20201210 20:13:06.475"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${first_search_result}//h4</arg>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201210 20:13:07.433" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201210 20:13:06.497" endtime="20201210 20:13:07.433"></status>
+</kw>
+<msg timestamp="20201210 20:13:07.433" level="FAIL">Element '//*[@class="search__products__item"][1]//h4' should have contained text 'POLO SHIRT' but its text was 'CODE DIVISION T-SHIRT'.</msg>
+<status status="FAIL" starttime="20201210 20:13:06.475" endtime="20201210 20:13:07.433"></status>
+</kw>
+<status status="FAIL" starttime="20201210 20:13:06.452" endtime="20201210 20:13:07.433"></status>
+</kw>
+<status status="FAIL" starttime="20201210 20:13:03.728" endtime="20201210 20:13:07.433"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201210 20:13:07.434" endtime="20201210 20:13:07.517"></status>
+</kw>
+<status status="FAIL" starttime="20201210 20:12:59.884" endtime="20201210 20:13:07.518" critical="yes">Element '//*[@class="search__products__item"][1]//h4' should have contained text 'POLO SHIRT' but its text was 'CODE DIVISION T-SHIRT'.</status>
+</test>
+<test id="s1-t4" name="Find Audiobook product with partial name">
+<kw name="Open Browser To Front Page" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20201210 20:13:07.524" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20201210 20:13:07.523" endtime="20201210 20:13:11.204"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:07.522" endtime="20201210 20:13:11.204"></status>
+</kw>
+<kw name="Template Find Product">
+<arguments>
+<arg>LAGER</arg>
+</arguments>
+<kw name="Search product">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:13:11.207" endtime="20201210 20:13:11.282"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<msg timestamp="20201210 20:13:11.283" level="INFO">Clicking element '//*[@data-test="menuSearchOverlayLink"]'.</msg>
+<status status="PASS" starttime="20201210 20:13:11.282" endtime="20201210 20:13:11.769"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>timeout=2 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:13:11.769" endtime="20201210 20:13:11.824"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>${product_name}</arg>
+</arguments>
+<msg timestamp="20201210 20:13:11.825" level="INFO">Typing text 'LAGER' into text field '//input[@placeholder="search"]'.</msg>
+<status status="PASS" starttime="20201210 20:13:11.825" endtime="20201210 20:13:12.327"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2 seconds</arg>
+<arg>Wait for search to finnish</arg>
+</arguments>
+<msg timestamp="20201210 20:13:14.328" level="INFO">Slept 2 seconds</msg>
+<msg timestamp="20201210 20:13:14.328" level="INFO">Wait for search to finnish</msg>
+<status status="PASS" starttime="20201210 20:13:12.327" endtime="20201210 20:13:14.328"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:11.206" endtime="20201210 20:13:14.328"></status>
+</kw>
+<kw name="Verify first search result">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${first_search_result}</arg>
+<arg>timeout=5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:13:14.329" endtime="20201210 20:13:14.348"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${first_search_result}//h4</arg>
+<arg>${product_name}</arg>
+</arguments>
+<msg timestamp="20201210 20:13:14.370" level="INFO">Element '//*[@class="search__products__item"][1]//h4' contains text 'LAGER'.</msg>
+<status status="PASS" starttime="20201210 20:13:14.349" endtime="20201210 20:13:14.370"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:14.328" endtime="20201210 20:13:14.370"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:11.205" endtime="20201210 20:13:14.370"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201210 20:13:14.371" endtime="20201210 20:13:14.478"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:07.520" endtime="20201210 20:13:14.478" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Find Paint Product with partial name">
+<kw name="Open Browser To Front Page" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20201210 20:13:14.485" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20201210 20:13:14.484" endtime="20201210 20:13:18.135"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:14.482" endtime="20201210 20:13:18.136"></status>
+</kw>
+<kw name="Template Find Product">
+<arguments>
+<arg>LIGHT SPEED</arg>
+</arguments>
+<kw name="Search product">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:13:18.137" endtime="20201210 20:13:18.168"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<msg timestamp="20201210 20:13:18.169" level="INFO">Clicking element '//*[@data-test="menuSearchOverlayLink"]'.</msg>
+<status status="PASS" starttime="20201210 20:13:18.169" endtime="20201210 20:13:18.326"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>timeout=2 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:13:18.326" endtime="20201210 20:13:18.910"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>${product_name}</arg>
+</arguments>
+<msg timestamp="20201210 20:13:18.911" level="INFO">Typing text 'LIGHT SPEED' into text field '//input[@placeholder="search"]'.</msg>
+<status status="PASS" starttime="20201210 20:13:18.911" endtime="20201210 20:13:19.072"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2 seconds</arg>
+<arg>Wait for search to finnish</arg>
+</arguments>
+<msg timestamp="20201210 20:13:21.073" level="INFO">Slept 2 seconds</msg>
+<msg timestamp="20201210 20:13:21.073" level="INFO">Wait for search to finnish</msg>
+<status status="PASS" starttime="20201210 20:13:19.072" endtime="20201210 20:13:21.073"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:18.137" endtime="20201210 20:13:21.074"></status>
+</kw>
+<kw name="Verify first search result">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${first_search_result}</arg>
+<arg>timeout=5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:13:21.075" endtime="20201210 20:13:21.096"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${first_search_result}//h4</arg>
+<arg>${product_name}</arg>
+</arguments>
+<msg timestamp="20201210 20:13:21.118" level="INFO">Element '//*[@class="search__products__item"][1]//h4' contains text 'LIGHT SPEED'.</msg>
+<status status="PASS" starttime="20201210 20:13:21.096" endtime="20201210 20:13:21.118"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:21.074" endtime="20201210 20:13:21.118"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:18.136" endtime="20201210 20:13:21.118"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201210 20:13:21.119" endtime="20201210 20:13:21.207"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:14.480" endtime="20201210 20:13:21.207" critical="yes"></status>
+</test>
+<test id="s1-t6" name="Find Homeware Product with partial name">
+<kw name="Open Browser To Front Page" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20201210 20:13:21.212" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20201210 20:13:21.211" endtime="20201210 20:13:24.892"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:21.209" endtime="20201210 20:13:24.893"></status>
+</kw>
+<kw name="Template Find Product">
+<arguments>
+<arg>PARROT CUSHION</arg>
+</arguments>
+<kw name="Search product">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:13:24.896" endtime="20201210 20:13:24.930"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<msg timestamp="20201210 20:13:24.931" level="INFO">Clicking element '//*[@data-test="menuSearchOverlayLink"]'.</msg>
+<status status="PASS" starttime="20201210 20:13:24.930" endtime="20201210 20:13:25.104"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>timeout=2 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:13:25.104" endtime="20201210 20:13:25.917"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>${product_name}</arg>
+</arguments>
+<msg timestamp="20201210 20:13:25.918" level="INFO">Typing text 'PARROT CUSHION' into text field '//input[@placeholder="search"]'.</msg>
+<status status="PASS" starttime="20201210 20:13:25.917" endtime="20201210 20:13:26.087"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2 seconds</arg>
+<arg>Wait for search to finnish</arg>
+</arguments>
+<msg timestamp="20201210 20:13:28.089" level="INFO">Slept 2 seconds</msg>
+<msg timestamp="20201210 20:13:28.090" level="INFO">Wait for search to finnish</msg>
+<status status="PASS" starttime="20201210 20:13:26.087" endtime="20201210 20:13:28.090"></status>
+</kw>
+<status status="PASS" starttime="20201210 20:13:24.895" endtime="20201210 20:13:28.090"></status>
+</kw>
+<kw name="Verify first search result">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${first_search_result}</arg>
+<arg>timeout=5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20201210 20:13:28.091" endtime="20201210 20:13:28.112"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${first_search_result}//h4</arg>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201210 20:13:29.070" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201210 20:13:28.134" endtime="20201210 20:13:29.070"></status>
+</kw>
+<msg timestamp="20201210 20:13:29.070" level="FAIL">Element '//*[@class="search__products__item"][1]//h4' should have contained text 'PARROT CUSHION' but its text was 'CARROT JUICE'.</msg>
+<status status="FAIL" starttime="20201210 20:13:28.112" endtime="20201210 20:13:29.070"></status>
+</kw>
+<status status="FAIL" starttime="20201210 20:13:28.090" endtime="20201210 20:13:29.070"></status>
+</kw>
+<status status="FAIL" starttime="20201210 20:13:24.894" endtime="20201210 20:13:29.071"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201210 20:13:29.071" endtime="20201210 20:13:29.205"></status>
+</kw>
+<status status="FAIL" starttime="20201210 20:13:21.208" endtime="20201210 20:13:29.205" critical="yes">Element '//*[@class="search__products__item"][1]//h4' should have contained text 'PARROT CUSHION' but its text was 'CARROT JUICE'.</status>
+</test>
+<doc>Tests for dashboard search feature</doc>
+<status status="FAIL" starttime="20201210 20:12:44.861" endtime="20201210 20:13:29.208"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="3">Critical Tests</stat>
+<stat pass="3" fail="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="3" id="s1" name="Find Products">Find Products</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

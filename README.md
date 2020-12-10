@@ -142,3 +142,37 @@ Some situations do call for extra code; we can cover exotic use cases or build y
 #### Crafted with ❤️ by [Mirumee Software](http://mirumee.com)
 
 hello@mirumee.com
+
+
+## How to run acceptance tests
+
+### Requirements
+- Python 3
+- Pip for Python 3
+- Chrome browser and chromedriver
+- System under test (see instructions above)
+
+### Run tests
+
+Working directory for acceptance tests is "tests" folder
+    
+    cd tests
+
+Create a virtualenv directory in your working directory and activate the virtual environment:
+
+    python3 -m venv venv
+    source venv/bin/activate
+
+Install requirements
+    
+    pip install -r requirements.txt
+
+Set drivermanager 
+    
+    webdrivermanager chrome
+
+Run tests
+    
+    robot find_products.robot
+
+
